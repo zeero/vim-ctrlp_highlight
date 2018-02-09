@@ -8,7 +8,7 @@ task :rename do
     next
   end
 
-  Dir.glob('**/*.vim') do |filename|
+  Dir.glob('**/*template*.vim') do |filename|
     File.open(filename, 'r') do |infile|
       File.open(filename.sub(PATTERN, name), 'w') do |outfile|
         outfile.puts infile.read.gsub(CAPITAL_PATTERN, name.capitalize).gsub(PATTERN, name)
@@ -16,6 +16,9 @@ task :rename do
     end
     File.delete filename
   end
+
+  buffer = File.open('README.md', 'r') { |f| f.read.gsub(CAPITAL_PATTERN, name.capitalize).gsub(PATTERN, name) }
+  File.open('README.md', 'w') { |f| f.puts buffer }
 end
 
 task default: :rename

@@ -1,2 +1,2 @@
-# vim-ctrlp_template
-CtrlP Plugin Template
+# vim-ctrlp_highlight
+CtrlP extension for vim highlight.
