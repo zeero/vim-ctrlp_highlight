@@ -2,7 +2,7 @@
 CtrlP Extension for highlight.
 
 ## Install
-You should use package manager.
+Install with package manager.
 
 [dein.vim](https://github.com/Shougo/dein.vim):
 ```dein.toml
