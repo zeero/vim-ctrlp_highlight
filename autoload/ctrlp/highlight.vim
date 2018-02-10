@@ -72,15 +72,23 @@ call add(g:ctrlp_ext_vars, {
 " Return: a Vim's List
 "
 function! ctrlp#highlight#init()
-  let input = [
-    \ 'Sed sodales fri magna, non egestas ante consequat nec.',
-    \ 'Aenean vel enim mattis ultricies erat.',
-    \ 'Donec vel ipsummauris euismod feugiat in ut augue.',
-    \ 'Aenean porttitous quam, id pellentesque diam adipiscing ut.',
-    \ 'Maecenas luctuss ipsum, vitae accumsan magna adipiscing sit amet.',
-    \ 'Nulla placerat  ante, feugiat egestas ligula fringilla vel.',
-    \ ]
-  return input
+  redir => output
+  silent! highlight
+  redir END
+  let highlights = split(output, "\n")
+
+  for highlight in highlights
+    let highname = get(split(highlight), 0, '')
+    execute "syn match " . highname . " '" . highname . "\\s*\\zsxxx'"
+  endfor
+
+  let words = ['term=', 'start=', 'stop=', 'cterm=', 'ctermfg=', 'ctermbg=', 'gui=', 'font=', 'guifg=', 'guibg=', 'guisp=']
+  for word in words
+    let highname = get(split(highlight), 0, '')
+    execute "syn match Keyword '" . word . "'"
+  endfor
+
+  return highlights
 endfunction
 
 
@@ -92,9 +100,8 @@ endfunction
 "  a:str    the selected string
 "
 function! ctrlp#highlight#accept(mode, str)
-  " For this example, just exit ctrlp and run help
   call ctrlp#exit()
-  help ctrlp-extensions
+  execute 'normal! a' . get(split(a:str), 0)
 endfunction
 
 

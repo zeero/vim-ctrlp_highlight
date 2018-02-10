@@ -14,7 +14,7 @@ set cpo&vim
 " Variables
 
 " Commands
-" command! CtrlPHighlight call ctrlp#init(ctrlp#highlight#id())
+command! CtrlPHighlight call ctrlp#init(ctrlp#highlight#id())
 
 " Keymaps
 
