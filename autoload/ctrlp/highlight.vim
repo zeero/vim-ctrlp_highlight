@@ -1,6 +1,6 @@
 " =============================================================================
 " File:          autoload/ctrlp/highlight.vim
-" Description:   CtrlP extension for highlight.
+" Description:   CtrlP Extension for highlight.
 " =============================================================================
 
 " To load this extension into ctrlp, add this to your vimrc:

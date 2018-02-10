@@ -8,7 +8,7 @@ task :rename do
     next
   end
 
-  Dir.glob('**/*template*.vim') do |filename|
+  Dir.glob('**/*template*') do |filename|
     File.open(filename, 'r') do |infile|
       File.open(filename.sub(PATTERN, name), 'w') do |outfile|
         outfile.puts infile.read.gsub(CAPITAL_PATTERN, name.capitalize).gsub(PATTERN, name)

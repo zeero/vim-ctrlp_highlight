@@ -1,6 +1,6 @@
 " =============================================================================
 " File:          plugin/ctrlp_highlight.vim
-" Description:   CtrlP extension for highlight.
+" Description:   CtrlP Extension for highlight.
 " =============================================================================
 
 if exists('g:loaded_plugin_ctrlp_highlight') && (! exists('g:ctrlp_highlight#debug') )
