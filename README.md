@@ -8,9 +8,9 @@ Install with package manager.
 ```dein.toml
 [[plugin]]
 repo = 'zeero/vim-ctrlp_highlight'
+depends = ['ctrlp.vim']
 lazy = 1
 on_cmd = ['CtrlPHighlight']
-depends = ['ctrlp.vim']
 ```
 
 ## Usage
